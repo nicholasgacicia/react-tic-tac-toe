@@ -45,7 +45,7 @@ const Game = () => {
       return (
         <li key={move} className="li">
           <button
-            className="btn btn-primary"
+            className="btn btn-outline-danger"
             onClick={() => jumpTo(move)}>{destination}</button>
         </li>
       )
