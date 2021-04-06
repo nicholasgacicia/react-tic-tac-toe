@@ -1,16 +1,17 @@
-import React from "react";
+import React from 'react';
 import Board from './Board';
 
 const Game = () => {
 
   const handleClick = () => {
 
-
   }
+
 
   const jumpTo = () => {
 
   }
+
 
   const renderMoves = () => {
 
@@ -19,9 +20,7 @@ const Game = () => {
 
   return (
     <Board onClick={handleClick} />
-  )
-
-
+  );
 };
 
 export default Game;
