@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { calculateWinner } from '../helpers';
 import Board from './Board';
 
@@ -59,7 +59,8 @@ const Game = () => {
         <Col></Col>
         <Col xs={5}>
           <Board className="board" squares={history[stepNumber]} onClick={handleClick} />
-          <p><strong>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</strong></p>
+          <p>{winner ? <Alert variant="danger">"{winner}" IS THE WINNER!!! <hr/>Press "Go to start" and make a move to play again.</Alert> : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</p>
+          {/* <p><strong>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</strong></p> */}
         </Col>
         <Col>
           <div style={styles}>
