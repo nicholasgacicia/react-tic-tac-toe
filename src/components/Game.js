@@ -5,8 +5,7 @@ import Board from './Board';
 
 
 const styles = {
-  width: '200px',
-  margin: '20px auto',
+  margin: '0px auto',
   textAlign: 'left'
 };
 
@@ -59,11 +58,11 @@ const Game = () => {
       <Row>
         <Col></Col>
         <Col xs={5}>
-          <Board squares={history[stepNumber]} onClick={handleClick} />
+          <Board className="board" squares={history[stepNumber]} onClick={handleClick} />
+          <p><strong>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</strong></p>
         </Col>
         <Col>
           <div style={styles}>
-            <p>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</p>
             {renderMoves()}
           </div>
         </Col>
