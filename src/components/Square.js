@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 
 const style = {
@@ -10,12 +10,10 @@ const style = {
   outline: 'none'
 };
 
-
-
 const Square = ({ value, onClick }) => (
   <button style={style} onClick={onClick}>
     {value}
   </button>
-);
+)
 
 export default Square;
