@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import Board from './Board';
 import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { calculateWinner } from '../helpers';
-import Board from './Board';
 
 
 const styles = {
@@ -16,16 +16,11 @@ const Game = () => {
   const [xIsNext, setXisNext] = useState(true);
   const winner = calculateWinner(history[stepNumber]);
 
-
   const handleClick = i => {
     const timeInHistory = history.slice(0, stepNumber + 1);
     const current = timeInHistory[stepNumber];
     const squares = [...current];
-
-    // If user clicks an occupied square or if game is won, return
     if (winner || squares[i]) return;
-
-    // Put an X or O in the clicked square
     squares[i] = xIsNext ? 'X' : 'O';
     setHistory([...timeInHistory, squares]);
     setStepNumber(timeInHistory.length);
@@ -59,7 +54,7 @@ const Game = () => {
         <Col></Col>
         <Col xs={5}>
           <Board className="board" squares={history[stepNumber]} onClick={handleClick} />
-          <p>{winner ? <Alert variant="danger">"{winner}" IS THE WINNER!!! <hr/>Press "Go to start" and make a move to play again.</Alert> : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</p>
+          <p>{winner ? <Alert variant="danger">"{winner}" IS THE WINNER!!! <hr />Press "Go to start" and make a move to play again.</Alert> : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</p>
           {/* <p><strong>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</strong></p> */}
         </Col>
         <Col>
