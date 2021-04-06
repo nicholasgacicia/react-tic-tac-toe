@@ -58,7 +58,7 @@ const Game = () => {
     <Container>
       <Row>
         <Col></Col>
-        <Col xs={3}>
+        <Col xs={5}>
           <Board squares={history[stepNumber]} onClick={handleClick} />
         </Col>
         <Col>
